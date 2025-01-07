@@ -134,6 +134,7 @@
 
         <!-- JUDUL -->
         <div id="layoutSidenav_content">
+            <!-- HEADER -->
             <main>
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Laporan</h1>
@@ -141,12 +142,79 @@
                         <li class="breadcrumb-item"><a href="dump.html">Dashboard</a></li>
                 </div>
             </main>
+
+            <!-- CARD -->
+            <div class="row">
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-primary text-white mb-4">
+                        <div class="card-body">Harian</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div class="small text-white">Pendapatan</div>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div class="small text-white">Pengeluaran</div>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-warning text-white mb-4">
+                        <div class="card-body">Mingguan</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div class="small text-white">Pendapatan</div>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div class="small text-white">Pengeluaran</div>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-success text-white mb-4">
+                        <div class="card-body">Bulanan</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div class="small text-white">Pendapatan</div>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div class="small text-white">Pengeluaran</div>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-danger text-white mb-4">
+                        <div class="card-body">Tahunan</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div class="small text-white">Pendapatan</div>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div class="small text-white">Pengeluaran</div>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- LAPORAN -->
+            <div class="container">
+                <embed src="LAPORAN.pdf" type="application/pdf" width="100%" height="600px" id="pdfDocument">
+            </div>
         </div>
 
-        <!-- LAPORAN -->
-        <div class="container">
-            
-        </div>
+
+
+        <script>
+            function printPDF() {
+                var pdfFrame = document.getElementById('pdfDocument');
+                pdfFrame.focus();
+                pdfFrame.contentWindow.print();
+            }
+        </script>
+
 
 
 

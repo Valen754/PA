@@ -8,7 +8,7 @@
     <meta name="author" content="" />
     <title>Dashboard - Cafe F&B</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 <body class="sb-nav-fixed">
@@ -213,7 +213,7 @@
                                         <p class="mb-0">Klik untuk menambahkan menu baru</p>
                                     </div>
                                     <div>
-                                        <a href="tambah-menu.html" class="btn btn-light text-info"><i class="fas fa-plus"></i></a>
+                                        <button class="btn btn-light text-info" data-bs-toggle="modal" data-bs-target="#tambahMenuModal"><i class="fas fa-plus"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -226,7 +226,7 @@
                                         <p class="mb-0">Klik untuk menambahkan pesanan baru</p>
                                     </div>
                                     <div>
-                                        <a href="tambah-pesanan.html" class="btn btn-light text-info"><i class="fas fa-plus"></i></a>
+                                        <button class="btn btn-light text-info" data-bs-toggle="modal" data-bs-target="#tambahPesananModal"><i class="fas fa-plus"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -286,11 +286,109 @@
             </footer>
         </div>
     </div>
+    <!-- Modal Tambah Menu -->
+    <div class="modal fade" id="tambahMenuModal" tabindex="-1" aria-labelledby="tambahMenuModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tambahMenuModalLabel">Tambah Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="namaMenu" class="form-label">Nama Menu</label>
+                            <input type="text" class="form-control" id="namaMenu" placeholder="Nama Menu">
+                        </div>
+                        <div class="mb-3">
+                            <label for="hargaMenu" class="form-label">Harga</label>
+                            <input type="number" class="form-control" id="hargaMenu" placeholder="Harga">
+                        </div>
+                        <div class="mb-3">
+                            <label for="deskripsiMenu" class="form-label">Deskripsi</label>
+                            <textarea class="form-control" id="deskripsiMenu" rows="3" placeholder="Deskripsi"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fotoMenu" class="form-label">Foto</label>
+                            <input type="file" class="form-control" id="fotoMenu">
+                        </div>
+                        <div class="mb-3">
+                            <label for="kategoriMenu" class="form-label">Kategori</label>
+                            <select class="form-select" id="kategoriMenu">
+                                <option selected>Pilih Kategori</option>
+                                <option value="makanan">Makanan</option>
+                                <option value="minuman">Minuman</option>
+                                <option value="snack">Snack</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-primary">Simpan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Tambah Pesanan -->
+    <div class="modal fade" id="tambahPesananModal" tabindex="-1" aria-labelledby="tambahPesananModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tambahPesananModalLabel">Tambah Pesanan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="namaPelanggan" class="form-label">Nama Pelanggan</label>
+                            <input type="text" class="form-control" id="namaPelanggan" placeholder="Nama Pelanggan">
+                        </div>
+                        <div class="mb-3">
+                            <label for="menuPesanan" class="form-label">Menu</label>
+                            <select class="form-select" id="menuPesanan">
+                                <option selected>Pilih Menu</option>
+                                <option value="menu1">Menu 1</option>
+                                <option value="menu2">Menu 2</option>
+                                <option value="menu3">Menu 3</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="jumlahPesanan" class="form-label">Jumlah</label>
+                            <input type="number" class="form-control" id="jumlahPesanan" placeholder="Jumlah">
+                        </div>
+                        <div class="mb-3">
+                            <label for="totalPesanan" class="form-label">Total</label>
+                            <input type="number" class="form-control" id="totalPesanan" placeholder="Total" readonly>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-primary">Simpan</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
     <script src="assets/demo/chart-area-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
     <script src="js/datatables-simple-demo.js"></script>
+    <script>
+        // Menghitung total pesanan berdasarkan jumlah dan harga menu
+        document.getElementById('jumlahPesanan').addEventListener('input', function() {
+            const jumlah = parseInt(this.value) || 0;
+            const hargaMenu = parseInt(document.getElementById('menuPesanan').value) || 0;
+            document.getElementById('totalPesanan').value = jumlah * hargaMenu;
+        });
+
+        document.getElementById('menuPesanan').addEventListener('change', function() {
+            const jumlah = parseInt(document.getElementById('jumlahPesanan').value) || 0;
+            const hargaMenu = parseInt(this.value) || 0;
+            document.getElementById('totalPesanan').value = jumlah * hargaMenu;
+        });
+    </script>
 </body>
 </html>

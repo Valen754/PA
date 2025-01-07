@@ -9,7 +9,7 @@ var myLineChart = new Chart(ctx, {
   data: {
     labels: ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "september", "Oktober", "November", "Desember"],
     datasets: [{
-      label: "Sessions",
+      label: "Orderan",
       lineTension: 0.3,
       backgroundColor: "rgba(2,117,216,0.2)",
       borderColor: "rgba(2,117,216,1)",
@@ -20,7 +20,7 @@ var myLineChart = new Chart(ctx, {
       pointHoverBackgroundColor: "rgba(2,117,216,1)",
       pointHitRadius: 50,
       pointBorderWidth: 2,
-      data: [10000, 30162, 26263, 18394, 18287, 28682, 31274, 33259, 25849, 24159, 32651, 31984],
+      data: [200, 300, 250, 320, 330, 350, 300, 400, 410, 390, 450, 490],
     }],
   },
   options: {
@@ -39,7 +39,7 @@ var myLineChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 40000,
+          max: 1000,
           maxTicksLimit: 8
         },
         gridLines: {

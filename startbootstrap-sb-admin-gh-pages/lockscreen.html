@@ -101,7 +101,7 @@
     <div class="lockscreen-wrapper">
         <div class="lockscreen-box">
             <img alt="Profile picture of John Doe" height="100"
-                src="https://storage.googleapis.com/a1aa/image/AM78m0KcfUwLRSEH3uKUvZbSZcWFj8dyYWbysj6WsedQhvCUA.jpg"
+                src="media/PAS FOTO LAYAR MERAH.jpg"
                 width="100" />
             <h2>
                 Haykal
@@ -109,7 +109,7 @@
             <p>
                 Account Locked
             </p>
-            <form>
+            <form id="lockscreen-form">
                 <div class="mb-3">
                     <label class="form-label" for="password">
                         PASSWORD
@@ -121,6 +121,7 @@
                     </i>
                     UNLOCK
                 </button>
+                <p id="error-message" style="color: red; display: none;">Incorrect password</p>
             </form>
             <p class="mt-3">
                 <a href="#">
@@ -129,6 +130,17 @@
             </p>
         </div>
     </div>
+    <script>
+        document.getElementById('lockscreen-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const password = document.getElementById('password').value;
+            if (password === 'admin123') {
+                window.location.href = 'index.html';
+            } else {
+                document.getElementById('error-message').style.display = 'block';
+            }
+        });
+    </script>
 </body>
 
 </html>
